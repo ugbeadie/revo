@@ -69,20 +69,20 @@ export default function LandingHero() {
 
       {/* HERO */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 pt-36 pb-0">
-        {/* pill */}
+        {/* pill — sharper corners + glowing border */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-[11px] text-white/80 backdrop-blur"
+          className="mb-8 inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/[0.05] px-3 py-1.5 text-[11px] text-white/80 backdrop-blur-sm"
         >
-          <span className="rounded-full border border-white/20 bg-white/10 px-2 py-0.5 text-white">
+          <span className="rounded-[5px] border border-white/15 bg-white/[0.08] px-2 py-0.5 text-white font-medium">
             V2.0 Release
           </span>
-          <span>Integration with ChatGPT</span>
+          <span className="text-white/70">ChatGPT Integration</span>
           <motion.span
             whileHover={{ x: 4 }}
-            className="ml-1 text-white/60 cursor-pointer"
+            className="ml-0.5 text-white/50 cursor-pointer"
           >
             →
           </motion.span>
@@ -115,16 +115,25 @@ export default function LandingHero() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.85, duration: 0.6, ease: "easeOut" }}
-            className="absolute -left-44 top-1/2 -translate-y-1/2 z-20 w-[200px] rounded-2xl border border-white/[0.15] bg-white/[0.04] backdrop-blur-md shadow-[0_8px_40px_rgba(100,80,255,0.25)] overflow-hidden"
+            className="absolute -left-44 top-1/2 -translate-y-1/2 z-20 w-[200px] rounded-xl overflow-hidden"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(120,90,255,0.4) 0%, rgba(80,60,180,0.15) 100%)",
+              boxShadow:
+                "0 0 24px 4px rgba(100,80,255,0.3), 0 8px 40px rgba(100,80,255,0.2), inset 0 1px 0 rgba(255,255,255,0.1)",
+              padding: "1px",
+            }}
           >
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-white/25 to-transparent" />
-            <Image
-              src="/left.png"
-              alt="Left panel"
-              width={200}
-              height={260}
-              className="w-full h-auto object-cover"
-            />
+            <div className="rounded-[11px] bg-[#0a0720] overflow-hidden">
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+              <Image
+                src="/left.png"
+                alt="Left panel"
+                width={200}
+                height={260}
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </motion.div>
 
           {/* RIGHT FLOATING CARD */}
@@ -132,32 +141,50 @@ export default function LandingHero() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.85, duration: 0.6, ease: "easeOut" }}
-            className="absolute -right-44 top-1/2 -translate-y-1/2 z-20 w-[200px] rounded-2xl border border-white/[0.15] bg-white/[0.04] backdrop-blur-md shadow-[0_8px_40px_rgba(100,80,255,0.25)] overflow-hidden"
+            className="absolute -right-44 top-1/2 -translate-y-1/2 z-20 w-[200px] rounded-xl overflow-hidden"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(120,90,255,0.4) 0%, rgba(80,60,180,0.15) 100%)",
+              boxShadow:
+                "0 0 24px 4px rgba(100,80,255,0.3), 0 8px 40px rgba(100,80,255,0.2), inset 0 1px 0 rgba(255,255,255,0.1)",
+              padding: "1px",
+            }}
           >
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-white/25 to-transparent" />
-            <Image
-              src="/right.png"
-              alt="Right panel"
-              width={200}
-              height={260}
-              className="w-full h-auto object-cover"
-            />
+            <div className="rounded-[11px] bg-[#0a0720] overflow-hidden">
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+              <Image
+                src="/right.png"
+                alt="Right panel"
+                width={200}
+                height={260}
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </motion.div>
 
-          {/* MAIN DASHBOARD IMAGE */}
+          {/* MAIN DASHBOARD IMAGE — glowing gradient border */}
           <motion.div
             whileHover={{ scale: 1.01 }}
-            className="overflow-hidden rounded-2xl border border-white/[0.12] bg-white/[0.02] backdrop-blur shadow-[0_40px_120px_rgba(120,90,255,0.25),0_0_0_1px_rgba(255,255,255,0.05)]"
+            className="rounded-xl overflow-hidden"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(140,110,255,0.5) 0%, rgba(90,65,200,0.2) 40%, rgba(140,110,255,0.45) 100%)",
+              boxShadow:
+                "0 0 40px 8px rgba(110,80,255,0.35), 0 0 80px 20px rgba(100,70,255,0.15), 0 40px 120px rgba(120,90,255,0.2)",
+              padding: "1px",
+            }}
           >
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-            <Image
-              src="/hero.png"
-              alt="Dashboard preview"
-              width={1920}
-              height={1080}
-              priority
-              className="w-full h-auto object-cover"
-            />
+            <div className="rounded-[11px] bg-[#080620] overflow-hidden">
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              <Image
+                src="/hero.png"
+                alt="Dashboard preview"
+                width={1920}
+                height={1080}
+                priority
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </motion.div>
         </motion.div>
       </div>
